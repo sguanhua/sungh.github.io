@@ -1,0 +1,29 @@
+title: Sungh
+description: 一些文字，一些经过。一个存放文字与影像的个人空间。
+url: "https://sungh314.github.io"
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+markdown: kramdown
+highlighter: rouge
+permalink: /notes/:title/
+excerpt_separator: "<!--more-->"
+future: false
+show_drafts: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: default
+      kind: post
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

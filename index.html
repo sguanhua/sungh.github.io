@@ -1,0 +1,13 @@
+---
+title: 首页
+description: 一些文字，一些经过。Sungh 的个人主页与博客。
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy"><p class="eyebrow"><span class="small-line"></span> A PERSONAL NOTEBOOK</p><h1 id="hero-title">一些文字，<br>一些<span class="serif-accent">经过。</span></h1><p class="hero-description">给零散的想法和照片，留一个固定的地方。<br>在这里，按自己的节奏记录。</p><a class="text-link" href="{{ '/blog/' | relative_url }}">从一篇文字开始 <span>↗</span></a></div>
+  <div class="hero-art" aria-hidden="true"><span class="art-corner">FIELD NOTES / 001</span><svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="283" cy="96" r="43" fill="#c67954"/><path d="M20 260 142 115 249 260" fill="#c7cbb9"/><path d="m113 260 127-128 147 128" fill="#869485"/><path d="m162 260 105-91 128 91" fill="#526b61"/><path d="M20 260h375M20 275h375M20 290h375" stroke="#b8beb0"/><path d="m142 115 28 72-25-15-21 16 18-73Z" fill="#f6f4ee"/><path d="M46 75h57m-57 8h35" stroke="#adb6a5"/></svg><div class="art-caption"><span>文字 / 影像 / 沿途</span><span>慢慢来。</span></div></div>
+</section>
+<section class="recent-section" aria-labelledby="recent-title"><div class="section-heading"><div><p class="eyebrow">01 / WORDS</p><h2 id="recent-title">最近写下的</h2></div><a class="quiet-link" href="{{ '/blog/' | relative_url }}">全部文字 ↗</a></div>
+  <div class="post-list">{% for post in site.posts limit: 4 %}<article class="post-row"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time><div><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3><p>{{ post.description | default: post.excerpt | strip_html | truncate: 100 }}</p></div><a class="row-arrow" href="{{ post.url | relative_url }}" aria-label="阅读：{{ post.title | escape }}">↗</a></article>{% else %}<p class="empty-copy">第一篇文字，正在路上。</p>{% endfor %}</div>
+</section>
+<section class="photo-invitation" aria-labelledby="photo-title"><div><p class="eyebrow">02 / IMAGES</p><h2 id="photo-title">看见，也留下。</h2><p>把值得回看的瞬间，慢慢整理成一页照片。</p><a class="text-link" href="{{ '/photos/' | relative_url }}">翻开相册 <span>↗</span></a></div><span class="frame-symbol" aria-hidden="true"><span></span></span></section>
+<aside class="home-note"><span class="eyebrow">A SMALL NOTE</span><p>不必每一次经过，都有结论。<br>有时，记下来就很好。</p><a class="quiet-link" href="{{ '/about/' | relative_url }}">关于这里 ↗</a></aside>
