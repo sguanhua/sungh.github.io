@@ -1,6 +1,6 @@
 # Sungh 的个人主页与博客
 
-网站：<https://sungh314.github.io/>  
+网站：<https://sguanhua.github.io/sungh.github.io/>  
 技术：GitHub Pages + Jekyll，直接从 `main` 分支根目录发布。无需另租服务器、数据库或安装 WordPress。
 
 ## 首次上传源码包
@@ -9,7 +9,7 @@
 
 1. 解压 `sungh314-github-pages-blog.zip`，进入解压后的文件夹。
 2. 在本仓库点击 **uploading an existing file**（已有文件时使用 **Add file → Upload files**）。
-3. 将解压后的源码文件和 `_layouts`、`_posts` 文件夹一起拖入上传区域。上传的是源码内容，不是 ZIP 文件，也不要把外层 `sungh314.github.io` 文件夹作为网站根目录。必须保留子目录结构。
+3. 将解压后的源码文件和 `_layouts`、`_posts` 文件夹一起拖入上传区域。上传的是源码内容，不是 ZIP 文件，也不要把外层 `sungh.github.io` 文件夹作为网站根目录。必须保留子目录结构。
 4. 提交到 `main`。确认仓库根目录能看到 `index.html` 和 `_config.yml`，`_layouts` 中有 `default.html`，`_posts` 中有开站文章。
 5. 进入 **Settings → Pages → Build and deployment**，选择 **Deploy from a branch → main → /(root)**，保存。
 6. 在 **Actions** 等待 `pages build and deployment` 成功，再从 Pages 设置页打开网站。
@@ -20,7 +20,7 @@
 git init -b main
 git add .
 git commit -m "Create personal homepage and blog"
-git remote add origin https://github.com/Sungh314/sungh314.github.io.git
+git remote add origin https://github.com/sguanhua/sungh.github.io.git
 git push -u origin main
 ```
 
@@ -47,7 +47,7 @@ date: 2026-10-20 10:00:00 +0800
 
 普通段落、列表、链接都可以使用 Markdown。
 
-![清楚描述画面内容的替代文字](/images/2026/example.jpg)
+![清楚描述画面内容的替代文字]({{ "/images/2026/example.jpg" | relative_url }})
 ```
 
 文章的固定地址是 `/notes/英文短名/`。发布后尽量保持文件名中的英文短名稳定，避免旧链接失效。
@@ -106,7 +106,7 @@ photos:
 源码和历史保存在 Git 仓库中。可以使用 **Code → Download ZIP** 下载当前版本，也可以在自己的电脑执行：
 
 ```bash
-git clone https://github.com/Sungh314/sungh314.github.io.git
+git clone https://github.com/sguanhua/sungh.github.io.git
 ```
 
 定期保留自己的副本。未来更换主题、绑定域名或迁往其他静态托管平台，不需要重新撰写 Markdown 正文。

@@ -17,4 +17,4 @@ permalink: /about/
 
 如果想在有新文章时再来，可以使用 [RSS]({{ '/feed.xml' | relative_url }}) 订阅。
 
-也可以在 [GitHub](https://github.com/Sungh314) 找到我。
+也可以在 [GitHub](https://github.com/sguanhua) 找到我。

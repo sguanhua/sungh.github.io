@@ -1,7 +1,7 @@
 title: Sungh
 description: 一个存放文字与影像的个人空间。
-url: "https://sungh.github.io"
-baseurl: ""
+url: "https://sguanhua.github.io"
+baseurl: "/sungh.github.io"
 lang: zh-CN
 timezone: Asia/Shanghai
 markdown: kramdown
