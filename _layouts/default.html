@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
-  <meta name="theme-color" content="#f6f4ee">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
@@ -18,7 +18,7 @@
   <a class="skip-link" href="#main">跳到正文</a>
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Sungh 首页"><span class="brand-mark">s.</span><span>Sungh<span class="brand-sub">个人笔记</span></span></a>
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Sungh 首页">Sungh</a>
       <nav class="site-nav" aria-label="主导航">
         <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>首页</a>
         <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.kind == 'post' %} aria-current="page"{% endif %}>文字</a>
@@ -29,17 +29,16 @@
     <main id="main" tabindex="-1">
       {% if page.kind == 'post' %}
       <article class="reading-column post">
-        <a class="back-link" href="{{ '/blog/' | relative_url }}">← 全部文字</a>
-        <header class="post-header"><p class="eyebrow">随笔 / <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time></p><h1>{{ page.title | escape }}</h1>{% if page.description %}<p class="lede">{{ page.description | escape }}</p>{% endif %}</header>
+        <a class="back-link" href="{{ '/blog/' | relative_url }}">← 全部文章</a>
+        <header class="post-header"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time><h1>{{ page.title | escape }}</h1>{% if page.description %}<p class="lede">{{ page.description | escape }}</p>{% endif %}</header>
         <div class="prose">{{ content }}</div>
-        <footer class="post-end"><span>写到这里。谢谢阅读。</span><a href="{{ '/feed.xml' | relative_url }}">通过 RSS 订阅 ↗</a></footer>
         {% if page.previous or page.next %}<nav class="post-pagination" aria-label="相邻文章">{% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title | escape }}</a>{% endif %}{% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title | escape }} →</a>{% endif %}</nav>{% endif %}
       </article>
       {% elsif page.kind == 'about' %}
-      <article class="reading-column about"><p class="eyebrow">ABOUT THIS SPACE</p><h1>{{ page.title | escape }}</h1><div class="prose">{{ content }}</div></article>
+      <article class="reading-column about"><h1>{{ page.title | escape }}</h1><div class="prose">{{ content }}</div></article>
       {% else %}{{ content }}{% endif %}
     </main>
-    <footer class="site-footer"><p>© {{ site.time | date: '%Y' }} Sungh <span class="footer-dot">·</span> 文字与影像，慢慢积累。</p><div><a href="{{ '/feed.xml' | relative_url }}">RSS</a><a href="https://github.com/sguanhua">GitHub ↗</a><a href="#main">回到上方 ↑</a></div></footer>
+    <footer class="site-footer"><span>© {{ site.time | date: '%Y' }} Sungh</span><span><a href="{{ '/feed.xml' | relative_url }}">RSS</a><a href="https://github.com/sguanhua">GitHub</a></span></footer>
   </div>
 </body>
 </html>

@@ -1,8 +1,10 @@
 ---
 title: 照片
-description: 一些值得回看的瞬间。
+description: Sungh 的照片。
 permalink: /photos/
 photos: []
 ---
-<header class="page-heading"><p class="eyebrow">A FEW FRAMES</p><h1>照片</h1><p>一些值得回看的瞬间。</p></header>
-{% if page.photos.size > 0 %}<div class="photo-grid">{% for photo in page.photos %}<figure><a href="{{ photo.src | relative_url }}"><img src="{{ photo.src | relative_url }}" alt="{{ photo.alt | default: photo.caption | escape }}" loading="lazy" decoding="async"></a>{% if photo.caption %}<figcaption>{{ photo.caption | escape }}</figcaption>{% endif %}</figure>{% endfor %}</div>{% else %}<section class="photo-empty"><span class="frame-symbol" aria-hidden="true"><span></span></span><h2>照片还在路上。</h2><p>先认真看，再慢慢整理。<br>这里会放下那些想要留下的瞬间。</p><a class="quiet-link" href="{{ '/' | relative_url }}">回首页看看 ↗</a></section>{% endif %}
+<header class="page-heading"><h1>照片</h1></header>
+{% if page.photos.size > 0 %}
+<div class="photo-grid">{% for photo in page.photos %}<figure><a href="{{ photo.src | relative_url }}"><img src="{{ photo.src | relative_url }}" alt="{{ photo.alt | default: photo.caption | escape }}" loading="lazy" decoding="async"></a>{% if photo.caption %}<figcaption>{{ photo.caption | escape }}</figcaption>{% endif %}</figure>{% endfor %}</div>
+{% else %}<p class="empty-copy photo-empty">暂无照片。</p>{% endif %}

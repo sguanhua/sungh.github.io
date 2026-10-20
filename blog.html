@@ -1,7 +1,16 @@
 ---
 title: 文字
-description: 随笔、观察和一些还没有结论的想法。
+description: Sungh 的文章。
 permalink: /blog/
 ---
-<header class="page-heading"><p class="eyebrow">THE NOTEBOOK</p><h1>文字</h1><p>随笔、观察，和一些还没有结论的想法。</p></header>
-<div class="archive-list">{% assign grouped_posts = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}{% for group in grouped_posts %}<section class="archive-year"><h2>{{ group.name }}</h2><div class="post-list">{% for post in group.items %}<article class="post-row"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time><div><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3><p>{{ post.description | default: post.excerpt | strip_html | truncate: 100 }}</p></div><a class="row-arrow" href="{{ post.url | relative_url }}" aria-label="阅读：{{ post.title | escape }}">↗</a></article>{% endfor %}</div></section>{% else %}<p class="empty-copy">这里的第一篇文字，正在路上。</p>{% endfor %}</div>
+<header class="page-heading"><h1>文字</h1></header>
+<div class="archive-list">
+  {% assign grouped_posts = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
+  {% for group in grouped_posts %}
+  <section class="archive-year"><h2>{{ group.name }}</h2><div class="post-list">
+    {% for post in group.items %}
+    <article class="post-row"><div><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>{% if post.description %}<p>{{ post.description | escape }}</p>{% endif %}</div><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time></article>
+    {% endfor %}
+  </div></section>
+  {% else %}<p class="empty-copy">暂无文章。</p>{% endfor %}
+</div>
